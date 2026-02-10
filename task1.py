@@ -1,6 +1,7 @@
 import random
 import os
 
+    
 def showTitle():
     # clear console and show instructions
     os.system("clear||cls")
