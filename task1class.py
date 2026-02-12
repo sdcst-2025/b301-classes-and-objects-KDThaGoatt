@@ -54,5 +54,11 @@ game = rand_num_game()
 
 while True:
     question = input("Would you like to play again? (y or n): ")
-    if question == "y" or question == "n" or question == "Y" or question == "N":
+    if question == "y" or question == "Y" or question =="yes" or question == "Yes":
         rand_num_game()
+    if question == "n" or question == "N" or question =="no" or question == "No":
+        print("exiting game...")
+        break
+    else:
+        print("invalid input")
+    
