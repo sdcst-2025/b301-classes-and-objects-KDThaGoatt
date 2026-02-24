@@ -21,6 +21,7 @@ class Calc:
         return
     
     def timeconvert(self):
+        #Converts the measurement of time you choose into years to be used as normal
         measure = input("Which time measurement would you like to use? (Years, Months, Days): ")
         if measure == "months" or measure == "Months":
             self.adjtime = self.time / 12
@@ -33,25 +34,27 @@ class Calc:
         return self.adjtime
 
     def interest(self,t):
+        #finds the interest then subtracts the original principal from it to find the amount gained
         self.time = t
         newtime = self.timeconvert()
         interest = self.principal * ((1 + (self.rate/self.nPeriods)) ** (self.nPeriods * newtime))
         gained = interest - self.principal
-        print(gained)
+        print(f"You gained ${round(gained,2)} in interest")
         return round(gained,2)
     
     def amount(self,t):
+        #finds the total amount of money after the interest
         self.time = t
         newtime = self.timeconvert()
         interest = self.principal * (1 + (self.rate/self.nPeriods)) ** (self.nPeriods * newtime)
-        print(interest)
+        print(f"Your new total is ${round(interest,2)}")
         return round(interest,2)
 
-daytest = Calc(P=1000, r=4, n=2) #Use day option for this assertion
+daytest = Calc(P=1000, r=4, n=2) #Use day option for these assertions
 assert daytest.interest(365) == 40.40
 assert daytest.amount(365) == 1040.40
 
-monthtest = Calc(P=1000, r=4, n=2) #Use month option for this assertion
+monthtest = Calc(P=1000, r=4, n=2) #Use month option for these assertions
 assert daytest.interest(12) == 40.40
 assert daytest.amount(12) == 1040.40
 

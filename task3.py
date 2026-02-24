@@ -24,12 +24,18 @@ class rectPrism:
         rectVolume = self.l * self.w * self.h
         if rectVolume == 0:
             rectVolume = None
+            print("The volume of your rectangular prism does not exist")
+        else:
+            print(f"The volume of your rectangular prism is {rectVolume}")
         return rectVolume
     
     def surfaceArea(self):
         rectSA = 2 * ((self.w * self.l) + (self.h * self.l) + (self.h * self.w))
         if self.w == 0 or self.l == 0 or self.h == 0:
             rectSA = None
+            print("The surface area of your rectangular prism does not exist")
+        else:
+            print(f"The surface area of your rectangular prism is {rectSA}")
         return rectSA
 
 # class instances and assertions below:
